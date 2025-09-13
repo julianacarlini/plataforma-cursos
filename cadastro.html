@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Nexus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body-login">
+  <header class="header">
+    <a href="index.html">
+      <img src="images/logoNexus.png" alt="Logotipo da Nexus" class="logo-login">
+    </a>
+  </header>
+
+  <main class="container">
+    <div class="card-login" role="form" aria-labelledby="cadastro-heading">
+      <h2 id="cadastro-heading">Faça seu Cadastro</h2>
+      <form id="cadastroForm">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" placeholder="Seu nome completo" required aria-describedby="nome-error">
+          <small id="nome-error" class="error-message"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="cpf">CPF</label>
+          <input type="text" id="cpf" placeholder="000.000.000-00" required maxlength="14" aria-describedby="cpf-error">
+          <small id="cpf-error" class="error-message"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="cadEmail">E-mail</label>
+          <input type="email" id="cadEmail" placeholder="seu@email.com" required aria-describedby="email-error">
+          <small id="email-error" class="error-message"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="cadSenha">Senha</label>
+          <input type="password" id="cadSenha" placeholder="Crie uma senha" minlength="8" required
+            aria-describedby="senha-tips senha-error">
+          <div id="senha-tips">
+            <small id="length-tip" class="password-tip">A senha deve conter 8 ou mais caracteres</small>
+            <small id="special-char-tip" class="password-tip">A senha deve conter pelo menos um caractere
+              especial</small>
+          </div>
+          <small id="senha-error" class="error-message"></small>
+        </div>
+
+        <button type="submit" class="btn-login">Cadastrar</button>
+      </form>
+
+      <p class="link-text">Já tem conta? <a href="login.html">Entrar</a></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

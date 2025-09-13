@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Nexus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body-login">
+    <header class="header">
+        <a href="index.html">
+            <img src="images/logoNexus.png" alt="Logotipo da Nexus" class="logo-login">
+        </a>
+    </header>
+
+    <main class="container">
+        <div class="card-login" role="form" aria-labelledby="login-heading">
+            <h2 id="login-heading">Faça seu Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">E-mail</label>
+                    <input type="email" id="loginEmail" placeholder="Insira seu e-mail" required aria-describedby="email-error">
+                    <small id="email-error" class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginSenha">Senha</label>
+                    <input type="password" id="loginSenha" placeholder="Insira sua senha" required minlength="8" aria-describedby="senha-error">
+                    <small id="senha-error" class="error-message"></small>
+                </div>
+
+                <button type="submit" class="btn-login">Entrar</button>
+            </form>
+
+            <p class="link-text">Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

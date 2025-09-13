@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="topo">
+    <header class="cabecalho" id="cabecalho">
+        <nav class="nav" aria-label="Menu principal">
+            <a href="#topo">
+                <img src="images/logoNexus.png" alt="Logotipo da Nexus" class="logo">
+            </a>
+            <ul id="menu-list" class="nav-list">
+                <li><a href="#sobre" class="button">Sobre</a></li>
+                <li><a href="curso.html" class="button">Cursos</a></li>
+                <li><a href="#como-se-inscrever" class="button">Como se inscrever</a></li>
+                <li class="login-item-mobile">
+                    <img src="images/logo-icon.png" alt="Ícone de Login" class="login-icon-mobile">
+                    <a href="login.html" class="button">Login</a>
+                </li>
+            </ul>
+            <div class="hamburguer-menu" role="button" aria-expanded="false" aria-controls="menu-list">
+                <span class="hamburguer-menu-top-line"></span>
+                <span class="hamburguer-menu-center-line"></span>
+                <span class="hamburguer-menu-bottom-line"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container" aria-label="Introdução aos cursos">
+            <div class="carousel-container" role="region" aria-label="Carrossel de destaques">
+                <div class="carousel-slide">
+                    <img src="images/domine-novos-horizontes.png" alt="Imagem de destaque: 'Domine Novos Horizontes">
+                    <img src="images/impulsione-sua-carreira.png" alt="Imagem de destaque: 'Impulsione sua carreira">
+                    <img src="images/crie-seu-futuro.png" alt="Imagem de destaque: Crie o futuro com código">
+                </div>
+                <button class="prev-btn" aria-label="Anterior">&#10094;</button>
+                <button class="next-btn" aria-label="Próximo">&#10095;</button>
+            </div>
+            <div class="text-content-wrapper">
+                <div class="text-content">
+                    <h2>Conheça os nossos cursos</h2>
+                    <p>Explore a variedade de cursos disponíveis e encontre o caminho ideal para
+                        sua carreira. Nossas formações foram cuidadosamente elaboradas para atender às demandas do
+                        mercado atual, oferecendo conhecimento aprofundado e habilidades práticas que farão a diferença
+                        em sua jornada profissional.</p>
+                </div>
+                <div class="text-content">
+                    <h2>Explore uma variedade de cursos</h2>
+                    <p>Nós oferecemos diversos cursos para impulsionar sua carreira. Seja para aprimorar suas
+                        habilidades de comunicação, mergulhar no mundo digital com programação, alavancar sua carreira
+                        com formações em vendas e liderança, ou muito mais, temos o curso certo para você. </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-us" id="sobre" aria-labelledby="sobre-titulo">
+            <div class="container">
+                <div class="text-content-wrapper">
+                    <div class="text-content">
+                        <h1 id="sobre-titulo">Bem-vindo(a) à Nexus: Plataforma de cusros online</h1>
+                        <p>Na Nexus, acreditamos que o conhecimento é a chave para o futuro. Nascemos da paixão por
+                            educação
+                            e do desejo de democratizar o acesso a um aprendizado de alta qualidade, flexível e
+                            acessível
+                            para todos. </p>
+                        <p>A Nexus funciona como um ecossistema de aprendizado dinâmico, onde conectamos alunos e
+                            instrutores especializados em diversas áreas. Nossa plataforma permite que você personalize
+                            seu
+                            percurso educacional e acesse materiais de estudo interativos, videoaulas e exercícios
+                            práticos. Cada curso é projetado para oferecer habilidades aplicáveis, garantindo
+                            que
+                            você não apenas adquira conhecimento, mas também saiba como usá-lo para impulsionar sua
+                            carreira.</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="images/imagemSobreNos.png" alt="Imagem ilustrativa: Estudante no computador, simbolizando o aprendizado online.">
+                </div>
+            </div>
+        </section>
+
+        <section class="courses" aria-labelledby="cursos-disponiveis">
+            <h1 id="cursos-disponiveis">Cursos Disponíveis</h1>
+            <div class="course-wrapper">
+                <button id="prev-course" class="nav-course-btn" aria-label="Anterior">&#10094;</button>
+                <div class="courses-carousel" role="listbox" aria-label="Carrossel de cursos">
+
+                    <div class="course-card" data-href="" role="option">
+                        <div class="card-image">
+                            <img src="images/imagem-curso-alemao.png" alt="Imagem do curso de Alemão para iniciantes">
+                        </div>
+                        <div class="card-content">
+                            <h2>Alemão para iniciantes (A1)</h2>
+                            <p>Curso introdutório de Alemão. Aprenda os fundamentos da língua e regras básicas para
+                                conseguir falar alemão.</p>
+                            <a href="login.html" class="btn" onclick="handleEnrollClick(event)">INSCREVA-SE</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-href="" role="option">
+                        <div class="card-image">
+                            <img src="images/imagem-curso-python.png" alt="Imagem do curso de Python para análise de dados">
+                        </div>
+                        <div class="card-content">
+                            <h2>Python Essencial para Dados</h2>
+                            <p>Domine Python para análise de dados, com bibliotecas como Pandas e Numpy.</p>
+                            <a href="login.html" class="btn" onclick="handleEnrollClick(event)">INSCREVA-SE</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card" data-href="" role="option">
+                        <div class="card-image">
+                            <img src="images/imagem-curso-vendas.png" alt="Imagem do curso de Técnicas de Vendas Modernas">
+                        </div>
+                        <div class="card-content">
+                            <h2>Técnicas de Vendas Modernas</h2>
+                            <p>Aprenda a negociar e fechar negócios de forma eficaz, utilizando as melhores estratégias.
+                            </p>
+                            <a href="login.html" class="btn" onclick="handleEnrollClick(event)">INSCREVA-SE</a>
+                        </div>
+                    </div>
+                    </div>
+                <button id="next-course" class="nav-course-btn" aria-label="Próximo">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="how-to" id="como-se-inscrever" aria-labelledby="instrucoes-inscrever">
+            <h1 id="instrucoes-inscrever">Como me inscrever?</h1>
+            <div class="container">
+                <div class="text-content-wrapper">
+                    <div class="text-content aluno">
+                        <h1>Aluno</h1>
+                        <ol>
+                            <li>Faça login ou crie sua conta e escolha o curso que deseja</li>
+                            <li>Ao selecionar o curso clique em "Inscreva-se"</li>
+                            <li>Preencha a ficha de inscrição com seus dados e documentos necessários (específico de
+                                cada curso)</li>
+                            <li>Um e-mail será enviado com o resultado da inscrição em até 5 dias</li>
+                            <li>Parabéns! Agora você é um aluno da plataforma, só esperar o início das aulas</li>
+                        </ol>
+                    </div>
+                    <div class="text-content instrutor">
+                        <h1>Instrutor</h1>
+                        <ol>
+                            <li>Faça login ou crie sua conta e acesse o painel de instrutor</li>
+                            <li>Selecione a opção "Adicionar novo curso"</li>
+                            <li>Insira as informações necessárias na ficha de inclusão de curso e envie o curso para
+                                revisão</li>
+                            <li>Um e-mail será enviado com a aprovação ou não do curso em até 15 dias</li>
+                            <li>Parabéns! Agora você é um instrutor da plataforma.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>Junte-se a comunidade Nexus e transforme seu futuro</p>
+        <a href="cadastro.html" class="btn">QUERO FAZER PARTE</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
