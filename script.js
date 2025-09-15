@@ -1,4 +1,4 @@
-//Função para mostrar erros ou dicas
+// Função para mostrar erros ou dicas
 function showError(input, message) {
     const formGroup = input.parentElement;
     const errorMsg = formGroup.querySelector(".error-message");
@@ -7,7 +7,7 @@ function showError(input, message) {
     input.style.borderColor = "red";
 }
 
-//Função para limpar erros
+// Função para limpar erros
 function clearError(input) {
     const formGroup = input.parentElement;
     const errorMsg = formGroup.querySelector(".error-message");
@@ -16,7 +16,7 @@ function clearError(input) {
     input.style.borderColor = "#ccc";
 }
 
-//Função para limpar os campos do formulário quando finaliza
+// Função para limpar os campos do formulário quando finaliza
 function clearFormFields(form) {
     const fields = form.querySelectorAll('input, textarea');
     fields.forEach(field => {
@@ -24,7 +24,7 @@ function clearFormFields(form) {
     });
 }
 
-//Máscara de CPF
+// Máscara de CPF
 document.getElementById("cpf")?.addEventListener("input", (e) => {
     let value = e.target.value.replace(/\D/g, "");
     if (value.length > 11) value = value.slice(0, 11);
@@ -34,7 +34,7 @@ document.getElementById("cpf")?.addEventListener("input", (e) => {
     e.target.value = value;
 });
 
-//Validação de login com a API de validação do HTML5
+// Validação de login com a API de validação do HTML5
 document.getElementById("loginForm")?.addEventListener("submit", (e) => {
     e.preventDefault(); // Impede o envio do formulário
 
@@ -66,12 +66,12 @@ document.getElementById("loginForm")?.addEventListener("submit", (e) => {
             showError(senhaInput, "E-mail ou senha incorretos.");
         } else {
             alert("Login realizado com sucesso!");
-            clearFormFields(e.target); 
+            clearFormFields(e.target);
         }
     }
 });
 
-//Validação de Cadastro
+// Validação de Cadastro
 document.getElementById("cadastroForm")?.addEventListener("submit", (e) => {
     e.preventDefault(); // Impede o envio do formulário
 
@@ -104,7 +104,7 @@ document.getElementById("cadastroForm")?.addEventListener("submit", (e) => {
     }
 
     const hasSpecialChar = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(senha.value);
-    
+
     if (!senha.checkValidity() || !hasSpecialChar) {
         showError(senha, "A senha deve ter 8 ou mais caracteres e pelo menos um caractere especial.");
         valid = false;
@@ -118,7 +118,7 @@ document.getElementById("cadastroForm")?.addEventListener("submit", (e) => {
     }
 });
 
-//Evento de input para o campo de senha no cadastro
+// Evento de input para o campo de senha no cadastro
 document.getElementById("cadSenha")?.addEventListener("input", (e) => {
     const senhaInput = e.target;
     const formGroup = senhaInput.parentElement;
@@ -131,13 +131,13 @@ document.getElementById("cadSenha")?.addEventListener("input", (e) => {
     const specialCharTip = `A senha deve conter pelo menos um caractere especial`;
 
     let finalMessage = '';
-    
+
     if (hasLength) {
         finalMessage += `<span style="color: green;">✓ ${lengthTip}</span><br>`;
     } else {
         finalMessage += `<span style="color: #888;">✗ ${lengthTip}</span><br>`;
     }
-    
+
     if (hasSpecialChar) {
         finalMessage += `<span style="color: green;">✓ ${specialCharTip}</span>`;
     } else {
@@ -154,7 +154,12 @@ document.getElementById("cadSenha")?.addEventListener("input", (e) => {
     }
 });
 
-//Carrossel de imagens e informações
+// Impede que o clique no botão "Inscreva-se" acione o link do card
+function handleEnrollClick(event) {
+    event.stopPropagation();
+}
+
+// Carrossel de imagens e informações
 document.addEventListener("DOMContentLoaded", () => {
     const carouselSlide = document.querySelector(".carousel-slide");
     const images = document.querySelectorAll(".carousel-slide img");
@@ -200,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCarousel();
 
-    //Carrossel de cursos
+    // Carrossel de cursos
     const coursesCarousel = document.querySelector(".courses-carousel");
     const nextCourseBtn = document.getElementById("next-course");
     const prevCourseBtn = document.getElementById("prev-course");
@@ -224,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    //Redirecionamento ao clicar no card de curso
+    // Redirecionamento ao clicar no card de curso
     const courseCards = document.querySelectorAll('.course-card');
 
     courseCards.forEach(card => {
@@ -242,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    //Menu hamburguer para mobile
+    // Menu hamburguer para mobile
     const hamburguerMenu = document.querySelector('.hamburguer-menu');
     const navList = document.querySelector('.nav-list');
     const overlay = document.createElement('div');
@@ -263,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.classList.remove('active');
     });
 
-    //Fecha o menu quando um link é clicado
+    // Fecha o menu quando um link é clicado
     navList.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 768) {
@@ -274,9 +279,35 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-});
 
-//Impede que o clique no botão "Inscreva-se" acione o link do card
-function handleEnrollClick(event) {
-    event.stopPropagation();
-}
+    // Código para alternar o dark mode (atualizado para ambos os botões)
+    const darkModeToggleDesktop = document.getElementById('dark-mode-toggle-desktop');
+    const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
+
+    const toggleDarkMode = () => {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    };
+
+    // Função para aplicar o modo com base no localStorage
+    const applyTheme = () => {
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+    };
+
+    // Aplica o tema ao carregar a página
+    applyTheme();
+
+    // Adiciona o evento de clique para ambos os botões
+    if (darkModeToggleDesktop) {
+        darkModeToggleDesktop.addEventListener('click', toggleDarkMode);
+    }
+    if (darkModeToggleMobile) {
+        darkModeToggleMobile.addEventListener('click', toggleDarkMode);
+    }
+});

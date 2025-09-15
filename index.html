@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plataforma de Cursos">
     <title>Nexus</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,15 +19,55 @@
                 <li><a href="#sobre" class="button">Sobre</a></li>
                 <li><a href="curso.html" class="button">Cursos</a></li>
                 <li><a href="#como-se-inscrever" class="button">Como se inscrever</a></li>
+                <li id="dark-mode-toggle-mobile" class="dark-mode-toggle-mobile">
+                    <span>Tema</span>
+                    <div class="theme-icon-container">
+                        <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </div>
+                </li>
                 <li class="login-item-mobile">
                     <img src="images/logo-icon.png" alt="Ícone de Login" class="login-icon-mobile">
                     <a href="login.html" class="button">Login</a>
                 </li>
             </ul>
-            <div class="hamburguer-menu" role="button" aria-expanded="false" aria-controls="menu-list">
+            <div class="hamburguer-menu" role="button" aria-expanded="false" aria-controls="menu-list"
+                aria-label="Ícone menu">
                 <span class="hamburguer-menu-top-line"></span>
                 <span class="hamburguer-menu-center-line"></span>
                 <span class="hamburguer-menu-bottom-line"></span>
+            </div>
+            <div id="dark-mode-toggle-desktop" class="dark-mode-toggle">
+                <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
             </div>
         </nav>
     </header>
@@ -35,9 +76,9 @@
         <section class="container" aria-label="Introdução aos cursos">
             <div class="carousel-container" role="region" aria-label="Carrossel de destaques">
                 <div class="carousel-slide">
-                    <img src="images/domine-novos-horizontes.png" alt="Imagem de destaque: 'Domine Novos Horizontes">
-                    <img src="images/impulsione-sua-carreira.png" alt="Imagem de destaque: 'Impulsione sua carreira">
-                    <img src="images/crie-seu-futuro.png" alt="Imagem de destaque: Crie o futuro com código">
+                    <img src="images/domine-novos-horizontes.webp" alt="Imagem de destaque: 'Domine Novos Horizontes">
+                    <img src="images/impulsione-sua-carreira.webp" alt="Imagem de destaque: 'Impulsione sua carreira">
+                    <img src="images/crie-seu-futuro.webp" alt="Imagem de destaque: Crie o futuro com código">
                 </div>
                 <button class="prev-btn" aria-label="Anterior">&#10094;</button>
                 <button class="next-btn" aria-label="Próximo">&#10095;</button>
@@ -80,7 +121,8 @@
                     </div>
                 </div>
                 <div class="image-container">
-                    <img src="images/imagemSobreNos.png" alt="Imagem ilustrativa: Estudante no computador, simbolizando o aprendizado online.">
+                    <img src="images/imagemSobreNos.webp"
+                        alt="Imagem ilustrativa: Estudante no computador, simbolizando o aprendizado online.">
                 </div>
             </div>
         </section>
@@ -93,7 +135,7 @@
 
                     <div class="course-card" data-href="" role="option">
                         <div class="card-image">
-                            <img src="images/imagem-curso-alemao.png" alt="Imagem do curso de Alemão para iniciantes">
+                            <img src="images/imagem-curso-alemao.webp" alt="Imagem do curso de Alemão para iniciantes">
                         </div>
                         <div class="card-content">
                             <h2>Alemão para iniciantes (A1)</h2>
@@ -105,7 +147,8 @@
 
                     <div class="course-card" data-href="" role="option">
                         <div class="card-image">
-                            <img src="images/imagem-curso-python.png" alt="Imagem do curso de Python para análise de dados">
+                            <img src="images/imagem-curso-python.webp"
+                                alt="Imagem do curso de Python para análise de dados">
                         </div>
                         <div class="card-content">
                             <h2>Python Essencial para Dados</h2>
@@ -116,7 +159,8 @@
 
                     <div class="course-card" data-href="" role="option">
                         <div class="card-image">
-                            <img src="images/imagem-curso-vendas.png" alt="Imagem do curso de Técnicas de Vendas Modernas">
+                            <img src="images/imagem-curso-vendas.webp"
+                                alt="Imagem do curso de Técnicas de Vendas Modernas">
                         </div>
                         <div class="card-content">
                             <h2>Técnicas de Vendas Modernas</h2>
@@ -125,7 +169,7 @@
                             <a href="login.html" class="btn" onclick="handleEnrollClick(event)">INSCREVA-SE</a>
                         </div>
                     </div>
-                    </div>
+                </div>
                 <button id="next-course" class="nav-course-btn" aria-label="Próximo">&#10095;</button>
             </div>
         </section>
